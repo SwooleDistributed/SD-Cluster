@@ -19,8 +19,8 @@ class CEvent extends Controller
     public function onConnect()
     {
         get_instance()->protect($this->fd);
-        $this->bindUid($this->fd);
-        $this->send($this->fd);
+        $this->bindUid(time());
+        $this->send($this->uid);
     }
     public function onClose()
     {
