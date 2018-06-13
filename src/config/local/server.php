@@ -9,19 +9,19 @@
 /**
  * 服务器设置
  */
-$config['name'] = 'SWD';
+$config['name'] = 'SD-Cluster';
 $config['server']['send_use_task_num'] = 500;
 $config['server']['set'] = [
     'log_file' => LOG_DIR."/swoole.log",
     'pid_file' => PID_DIR . '/server.pid',
     'log_level' => 5,
-    'reactor_num' => 4, //reactor thread num
-    'worker_num' => 4,    //worker process num
+    'reactor_num' => 1, //reactor thread num
+    'worker_num' => 1,    //worker process num
     'backlog' => 128,   //listen backlog
     'open_tcp_nodelay' => 1,
     'socket_buffer_size' => 1024 * 1024 * 1024,
     'dispatch_mode' => 2,
-    'task_worker_num' => 5,
+    'task_worker_num' => 1,
     'task_max_request' => 5000,
     'enable_reuse_port' => true,
     'heartbeat_idle_time' => 120,//2分钟后没消息自动释放连接
