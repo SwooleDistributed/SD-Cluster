@@ -33,6 +33,7 @@ class CEvent extends Controller
     public function http_sendToAll()
     {
         $this->sendToAll("sendToAll");
+        $this->http_output->end("ok");
     }
 
     /**
@@ -43,5 +44,6 @@ class CEvent extends Controller
         $uids = $this->http_input->get("uids");
         $uids = explode(",",$uids);
         $this->sendToUids($uids,"sendToUids");
+        $this->http_output->end("ok");
     }
 }
